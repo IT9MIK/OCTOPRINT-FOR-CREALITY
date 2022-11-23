@@ -72,8 +72,11 @@ uci delete mjpg-streamer.core.password
 uci commit mjpg-streamer
 
 opkg install python3 python3-pip python3-dev python3-psutil python3-pillow python3-cffi python3-tornado
-pip install --upgrade pip
 pip install --upgrade setuptools
+
+cd/tmp
+wget https://github.com/ihrapsa/OctoWrt/blob/main/packages/python3.9-regex-2022.1.18%2Bnetifaces-0.11.0_mipsel_24kc.ipk
+opkg install *.ipk
 
 echo " "
 echo "############################"
@@ -83,10 +86,10 @@ echo " "
 echo " Sit tight... "
 echo " "
 
-wget https://github.com/OctoPrint/OctoPrint/archive/refs/tags/1.8.6.zip -P /root
-unzip /root/1.8.6.zip -d /root
-cd /root/OctoPrint-1.8.6
-python /root/OctoPrint-1.8.6/setup.py install 
+wget https://github.com/OctoPrint/OctoPrint/archive/refs/tags/1.7.3.zip -P /root
+unzip /root/1.7.3.zip -d /root
+cd /root/OctoPrint-1.7.3
+python /root/OctoPrint-1.7.3/setup.py install 
 
 
 cd /
